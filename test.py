@@ -89,12 +89,12 @@ logging.basicConfig(
 LOGS = logging.getLogger(__name__)
 
 
-@fifthon.on(events.NewMessage(outgoing=True, pattern=r"\.تحديث"))
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.تحديث"))
 async def _(event):
 
     sandy = await event.edit(
         event,
-        "** ثـواني ويشتغل ؟ لمن مايشتغل طب سولف بكروبي  @QW_PN **",
+        "**❃ جارِ اعادة تشغيل السورس\nارسل** `.فحص` **او** `.الاوامر` **للتحقق مما إذ كان البوت شغال ، يستغرق الأمر في الواقع 1-2 دقيقة لإعادة التشغيل**",
     )
     try:
         ulist = get_collectionlist_items()
@@ -108,7 +108,7 @@ async def _(event):
     except Exception as e:
         LOGS.error(e)
     try:
-        await fifthon.disconnect()
+        await sython.disconnect()
     except CancelledError:
         pass
     except Exception as e:

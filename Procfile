@@ -1,1 +1,1 @@
-worker: bash shark.py
+worker: bash sython.py
